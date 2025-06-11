@@ -1,7 +1,9 @@
 FROM yuzutech/kroki
 
-# PlantUML 최신 버전 다운로드 (2024.5 예시)
+# 필요한 디렉토리 생성
+RUN mkdir -p /opt/plantuml
+
+# 최신 plantuml JAR 다운로드
 RUN curl -L -o /opt/plantuml/plantuml.jar https://github.com/plantuml/plantuml/releases/download/v1.2024.5/plantuml-1.2024.5.jar
 
-# 명시적으로 포트 노출 (Railway가 자동 인식 가능)
 EXPOSE 8000
